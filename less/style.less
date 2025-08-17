@@ -1,0 +1,36 @@
+@import "variables";
+@import "header";
+@import "navigation";
+@import "main";
+@import "footer";
+
+
+@primary-color: #3498db;
+@padding: 20px;
+
+body {
+  font-family: Arial, sans-serif;
+  padding: @padding;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: @primary-color;
+  color: white;
+  padding: 15px;
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 15px;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
