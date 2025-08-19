@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moja putovanja</title>
+
+  <!-- Učitavanje CSS koji će automatski nastati iz LESS-a -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <div class="container">
+
+    <div class="sidebar">
+      <ul>
+        <li><a href="#">Evropa</a></li>
+        <li><a href="#">Azija</a></li>
+        <li><a href="#">Amerika</a></li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+  <header>
+
+    <h1>Moja putovanja</h1>
+    <nav>
+  <ul>
+    <li><a href="index.html">Početna</a></li>
+    <li><a href="galerija.html">Galerija</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+</nav>
+
+  </header>
+
+  <main>
+   <h2>Kontaktirajte me</h2>
+        <form id="kontakt-forma" class="contact-form">
+          <label for="ime">Vaše ime:</label>
+          <input type="text" id="ime" name="ime" required>
+
+          <label for="email">Email adresa:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="poruka">Poruka:</label>
+          <textarea id="poruka" name="poruka" rows="5" required></textarea>
+
+          <button type="submit">Pošalji</button>
+        </form>
+
+        <div id="poruka-status"></div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Andrej Putnik</p>
+  </footer>
+   </div>
+  </div>
+
+  <!-- Učitavanje React-a preko CDN-a (za kasnije korake) -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+  <!-- Učitavanje tvoje logike (prazno za sad) -->
+  <script type="text/babel" src="js/app.js"></script>
+
+  <script>
+  document.getElementById("kontakt-forma").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const ime = document.getElementById("ime").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const poruka = document.getElementById("poruka").value.trim();
+    const status = document.getElementById("poruka-status");
+
+    if (!ime || !email || !poruka) {
+      status.textContent = "Sva polja su obavezna.";
+      status.style.color = "red";
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      status.textContent = "Unesite validan email.";
+      status.style.color = "red";
+      return;
+    }
+
+    status.textContent = "Hvala! Vaša poruka je uspešno poslata.";
+    status.style.color = "green";
+
+    // Opcionalno: resetuj formu
+    this.reset();
+  });
+</script>
+
+ 
+</body>
+</html>
