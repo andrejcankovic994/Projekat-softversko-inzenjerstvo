@@ -1,0 +1,34 @@
+@import "variables";
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+
+  label {
+    font-weight: bold;
+  }
+
+  input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+
+  button {
+    background-color: @primary-color;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(@primary-color, 10%);
+    }
+  }
+}

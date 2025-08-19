@@ -1,17 +1,67 @@
+
+
 @import "variables";
 @import "header";
 @import "navigation";
 @import "main";
 @import "footer";
+@import "sidebar";
+@import "destinations";
+@import "gallery";
+@import "contact";
 
 
-@primary-color: #3498db;
-@padding: 20px;
 
 body {
   font-family: Arial, sans-serif;
   padding: @padding;
   background-color: #f5f5f5;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh; // visina celog ekrana
+}
+
+// Leva bočna traka (sidebar)
+.sidebar {
+  width: 200px;
+  background-color: @secondary-color;
+  padding: @padding;
+
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  margin-left: 270px;
+  padding: @padding;
+}
+
+// Glavni deo sajta desno od sidebar-a
+.main-content {
+  flex: 1;
+  padding: @padding;
 }
 
 header {
@@ -33,4 +83,10 @@ header {
       }
     }
   }
+}
+
+footer {
+  background-color: #eee;
+  padding: @padding;
+  text-align: center;
 }

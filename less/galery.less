@@ -1,0 +1,40 @@
+.gallery {
+  margin-top: 40px;
+
+  h2 {
+    margin-bottom: 20px;
+    color: #000;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+
+    .gallery-item {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+
+      img {
+        width: 100%;
+        border-radius: 4px;
+        max-height: 160px;
+        object-fit: cover;
+      }
+
+      &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      p {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    }
+  }
+}

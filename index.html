@@ -3,32 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Klinika</title>
+  <title>Moja putovanja</title>
 
   <!-- Učitavanje CSS koji će automatski nastati iz LESS-a -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
+    <div class="container">
+
+    <div class="sidebar">
+      <ul>
+        <li><a href="#">Evropa</a></li>
+        <li><a href="#">Azija</a></li>
+        <li><a href="#">Amerika</a></li>
+      </ul>
+    </div>
+
+    <div class="main-content">
   <header>
+
     <h1>Moja putovanja</h1>
     <nav>
-      <ul>
-        <li><a href="#">Početna</a></li>
-        <li><a href="#">Galerija</a></li>
-        <li><a href="#">Zakazivanje</a></li>
-      </ul>
-    </nav>
+  <ul>
+    <li><a href="index.html">Početna</a></li>
+    <li><a href="galerija.html">Galerija</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+</nav>
+
   </header>
 
   <main>
-    <h2>Dobrodošli!</h2>
-    <p>Ovaj sajt prikazuje simulaciju klinike.</p>
+   <h2>Moja omiljena putovanja</h2>
+
+  <section class="destination">
+    <img src="img/pariz.jpg" alt="Pariz" />
+    <div class="description">
+      <h3>Pariz</h3>
+      <p>Romantični grad svetlosti, sa čuvenim Ajfelovim tornjem i bogatom kulturom.</p>
+      <div class="like-button" data-id="pariz"></div>
+
+    </div>
+  </section>
+
+  <section class="destination">
+    <img src="img/tokyo.jpg" alt="Tokio" />
+    <div class="description">
+      <h3>Tokio</h3>
+      <p>Moderna metropola u kojoj se tradicija i tehnologija spajaju u savršen balans.</p>
+      <div class="like-button" data-id="tokio"></div>
+
+    </div>
+  </section>
+
+  <section class="destination">
+    <img src="img/newyork.jpg" alt="Njujork" />
+    <div class="description">
+      <h3>Njujork</h3>
+      <p>Grad koji nikad ne spava – neboderi, Broadway i Central Park.</p>
+      <div class="like-button" data-id="njujork"></div>
+
+    </div>
+  </section>
+
+<section class="gallery">
+  <h2>Galerija putovanja</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="img/pariz.jpg" alt="Pariz" />
+      <p>Pariz</p>
+    </div>
+    <div class="gallery-item">
+      <img src="img/tokyo.jpg" alt="Tokio" />
+      <p>Tokio</p>
+    </div>
+    <div class="gallery-item">
+      <img src="img/newyork.jpg" alt="Njujork" />
+      <p>Njujork</p>
+    </div>
+  </div>
+</section>
+
+
   </main>
 
   <footer>
-    <p>&copy; 2025 Andrej</p>
+    <p>&copy; 2025 Andrej Putnik</p>
   </footer>
+   </div>
+  </div>
 
   <!-- Učitavanje React-a preko CDN-a (za kasnije korake) -->
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -37,5 +101,7 @@
 
   <!-- Učitavanje tvoje logike (prazno za sad) -->
   <script type="text/babel" src="js/app.js"></script>
+
+ 
 </body>
 </html>
